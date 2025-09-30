@@ -1,2 +1,2 @@
 # simulador-cache
-Análise de Desempenho da Hierarquia de Memória através de um Modelo de Simulação de Cache.
+Este projeto implementa um simulador de hierarquia de memória em C++, projetado para analisar e quantificar o impacto da latência de acesso no desempenho de um sistema. O simulador modela múltiplos níveis de cache conjunto-associativo, permitindo a configuração de parâmetros como latência, tamanho da linha, associatividade e políticas de escrita (Write-Through/Write-Back). Ao processar diferentes padrões de acesso à memória (sequencial e aleatório), a ferramenta calcula a latência total em ciclos e gera estatísticas detalhadas, como taxas de acerto (hit) e falta (miss) para cada nível, demonstrando de forma prática os princípios da localidade de referência
