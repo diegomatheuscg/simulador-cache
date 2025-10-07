@@ -1,5 +1,9 @@
-#include "Cache.h"
+//
+// Created by diego on 07/10/2025.
+//
 
-Cache::Cache(int lat, const std::string& n, Memory* proximo) 
-    : Memory(lat, n), proximo_nivel_(proximo) {
+#include "Cache.h"
+#include "Memory.h"
+Cache::Cache(int lat, int cache_size, int set_numbers, std::string &n, int associativity, Memory *next)
+: Memory() {
 }

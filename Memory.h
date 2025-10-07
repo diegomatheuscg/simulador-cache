@@ -4,11 +4,16 @@
 #include <string>
 
 class Memory {
-protected: 
-    std::string nome;
-
+protected:
+    int latency;
+    std::string name;
+    Memory *next;
+    Memory *previous;
 public:
-    Memory(int lat, const std::string& n);
+    Memory(int lat, std::string n, Memory* next_, Memory* previous_)
+    : latency(lat), name(n), next(next_), previous(previous_) {};
+
+    virtual ~Memory(){}
 };
 
 #endif 
