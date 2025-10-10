@@ -1,19 +1,21 @@
-#ifndef MEMORY_H 
+#ifndef MEMORY_H
 #define MEMORY_H
 
 #include <string>
 
-class Memory {
+class Memory
+{
 protected:
     int latency;
     std::string name;
-    Memory *next;
-    Memory *previous;
-public:
-    Memory(int lat, std::string n, Memory* next_, Memory* previous_)
-    : latency(lat), name(n), next(next_), previous(previous_) {};
 
-    virtual ~Memory(){}
+public:
+    Memory(int lat, std::string n);
+
+    virtual ~Memory() {}
+
+    virtual int read(int instruction);
+    virtual void write();
 };
 
-#endif 
+#endif

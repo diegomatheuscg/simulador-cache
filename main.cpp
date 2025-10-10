@@ -1,34 +1,29 @@
 #include <iostream>
 #include <cstdint>
-
+#include <list>
+#include <vector>
 #include <my-lib/bit.h>
 
 using BitSet = Mylib::BitSet<32>;
 
-int main (int argc, char **argv)
+int main(int argc, char **argv)
 {
-	BitSet bits;
 
-	bits = 127;
-	std::cout << bits << std::endl;
+	int quantidade_niveis;
 
-	// primeiro parâmetro é o bit inicial
-	// segundo parâmetro é a quantidade de bits a partir do bit inicial
-	bits[1, 2] = 0;
-	std::cout << bits << std::endl;
+	std::list<Memory *> mem_list;
+	std::vector<std::list<Linha>> set_para_cache;
 
-	uint32_t most_sig = bits[31];
-	std::cout << "Most significant bit: " << most_sig << std::endl;
+	Cache *cache1 = new Cache(1, "L1", 4, 2, set_para_cache);
+	mem_list.push_back(&cache1);
+	cache1->print_info();
 
-	// quando for só 1 bit, pode omitir o segundo parâmetro
-	bits[31] = 1;
-	std::cout << bits << std::endl;
-
-	most_sig = bits[31];
-	std::cout << "Most significant bit: " << most_sig << std::endl;
-
-	bits[31] = bits[1];
-	std::cout << bits << std::endl;
-
+	// for(int i = 0; i < quantidade_niveis; i++){
+	// 	if(i < quantidade_niveis - 1){
+	// 		Memory cache = new Cache();
+	// 	}else{
+	// 		Memory ram = new Ram();
+	// 	}
+	// }
 	return 0;
 }

@@ -2,23 +2,31 @@
 #define CACHE_H
 #include "Memory.h"
 #include <string>
-#include <unordered_map>
+#include <iostream>
 #include <list>
 #include <vector>
 #include "Linha.h"
 
+using namespace std;
+
 class Cache : public Memory {
 private:
-    std::string nome;
-    int cache_size;
     int associativity;
-    int set_numbers;
-    std::vector<std::list<Linha>> sets;
-    Memory *next;
+    int set_size;
+    std::vector<std::list<Linha>> set;
 
 public:
-    Cache(int lat, int cache_size, int set_numbers, std::string &n, int associativity, Memory *next);
+    Cache(
+        int l,
+        std::string& n, 
+        int a,
+        int s_size,
+        std::vector<std::list<Linha>>& set_
+    );
 
+    void print_info(){
+        std::cout << "Associatividade: " << associativity << "Tamanho do conjunto: " << set_size << endl;
+    }
 };
 
 #endif

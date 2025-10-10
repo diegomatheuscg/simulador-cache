@@ -5,15 +5,14 @@
 
 #endif
 
-class Linha {
-protected:
+struct Linha {
     int tag;
-    int set;//indice
-    int offset;
-    int dirty_bit;
+    bool dirty_bit;
+    std::vector<uint8_t> data;
 
-
-
-public:
-    Linha(int tag, int estado, int dados, int offset);
+    Linha(){
+        tag = 0;
+        dirty_bit = false;
+        data.resize(64);
+    }
 };
